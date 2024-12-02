@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boringapp01
+  labels:
+    app: boringapp01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boringapp01
+  template:
+    metadata:
+      labels:
+        app: boringapp01
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
