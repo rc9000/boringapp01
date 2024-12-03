@@ -3,5 +3,5 @@ kind: Deployment
 metadata:
   name: boringapp-frontend
 spec:
-  replicas: 2
+  replicas: 5
 
