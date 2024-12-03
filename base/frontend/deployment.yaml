@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boringapp-frontend
+  labels:
+    app: boringapp-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boringapp-frontend
+  template:
+    metadata:
+      labels:
+        app: boringapp-frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
